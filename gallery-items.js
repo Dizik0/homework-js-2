@@ -40,18 +40,20 @@ const openImageFn = (e) => {
     }
 
     boxModalOpen.classList.add("is-open")
-    imgModalEl.src = protoNodeNameEl
-    imgModalEl.alt = altPhotoEl
-    imgModalEl.dataset.index = e.target.dataset.index
+     atributeImgModalEl(protoNodeNameEl, altPhotoEl)
     imgModalEl.dataset.index = 0
+}
+
+const atributeImgModalEl = (src, alt) => {
+    imgModalEl.src = src 
+    imgModalEl.alt =  alt 
 }
 
 galleryEl.addEventListener('click', openImageFn)
 
 const closeImageFn = () => {
     boxModalOpen.classList.remove("is-open")
-    imgModalEl.src = ''
-    imgModalEl.alt = ''
+     atributeImgModalEl('', '')
 }
 
 btnEl.addEventListener('click', closeImageFn)
